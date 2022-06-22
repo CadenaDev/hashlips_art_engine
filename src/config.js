@@ -5,17 +5,17 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "Cadena";
+const description = "Cadena NFT Collection for NFT 101 Course";
+const baseUri = "https://gateway.pinata.cloud/ipfs/{INSERT_YOUR_IMAGE_CID_HERE}";
 
 const solanaMetadata = {
-  symbol: "YC",
+  symbol: "CAD",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
+  external_url: "https://cadena.dev",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "BPdrKXmiyPn3vYD11YCPSqLRxihvZW6FSLj6Gwg7XTUz",
       share: 100,
     },
   ],
@@ -24,15 +24,11 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 3,
     layersOrder: [
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Planet" },
+      { name: "Logo" }
     ],
   },
 ];
@@ -42,8 +38,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 1500,
+  height: 1500,
   smoothing: false,
 };
 
@@ -78,7 +74,9 @@ const background = {
   default: "#000000",
 };
 
-const extraMetadata = {};
+const extraMetadata = {
+  artist: "Cadena",
+};
 
 const rarityDelimiter = "#";
 
@@ -92,7 +90,7 @@ const preview = {
 };
 
 const preview_gif = {
-  numberOfImages: 5,
+  numberOfImages: 3,
   order: "ASC", // ASC, DESC, MIXED
   repeat: 0,
   quality: 100,
